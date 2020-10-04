@@ -6,8 +6,8 @@ import numpy as np
 img = cv2.imread("Resources/cards.jpg")
 
 width, height=250, 250
-pts1 = np.float32([[564,169],[646,280],[464,366],[387,245]])
-pts2 = np.float32([[0,0],[width,0],[width,height],[0,height]]) #creating new perspective view which has sync values of points
+pts1 = np.float32([[564,169],[646,280],[464,366],[387,245]]) #INPUT
+pts2 = np.float32([[0,0],[width,0],[width,height],[0,height]]) #OUTPUT
 matrix = cv2.getPerspectiveTransform(pts1,pts2)
 
 matrix_print = np.array(matrix) #wanna see matrix?
