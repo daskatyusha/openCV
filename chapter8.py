@@ -41,11 +41,11 @@ def getContours(image):
         if area>500:
             cv2.drawContours(imgContour,cnt,-1, (255,0,0), 3) #-1 for all items in contours, draws contour
             perimeter = cv2.arcLength(cnt,True) #contour length
-            approx = cv2.approxPolyDP(cnt,0.02*perimeter,True) #approximately object corner locations I guess
-            print(len(approx))
+            approx = cv2.approxPolyDP(cnt,0.02*perimeter,True) #approximately object corner locations
+            print(len(approx)) #corners
 
             objCorner = len(approx)
-            x,y,w,h = cv2.boundingRect(approx)
+            x,y,w,h = cv2.boundingRect(approx) #contour drawing function 'till here
 
             if objCorner == 3: objectType ="Triangle"
             elif objCorner == 4:
