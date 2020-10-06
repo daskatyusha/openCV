@@ -1,4 +1,5 @@
 #WARP PERSPECTIVE
+#IDEA: we need 2 points, then create a matrix, and warp perspective ready.
 
 import cv2
 import numpy as np

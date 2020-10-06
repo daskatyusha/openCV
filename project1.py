@@ -1,3 +1,4 @@
+#VIRTUAL PAINTING
 import cv2
 import numpy as np
 
@@ -75,6 +76,10 @@ while True:
     if len(myPoints) != 0:
         drawOnCanvas(myPoints, myColourValues)
 
-    cv2.imshow("Webcam", imgResult)  # because we are boxing the imgResult
+    if cv2.waitKey(10) & 0xFF == ord("r"): #press "r" to refresh
+        myPoints = []
+
+    cv2.imshow("Webcam", imgResult)
+
     if cv2.waitKey(1) & 0xFF == ord("q"):
         break
