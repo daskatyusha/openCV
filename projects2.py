@@ -34,10 +34,10 @@ def getContours(image):
     contours,hierarchy = cv2.findContours(image,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_NONE)
     for cnt in contours: 
         area = cv2.contourArea(cnt)
-        if area > 500:
+        if area > 1500:
             #cv2.drawContours(imgContour,cnt,-1, (255,0,0), 2)
             perimeter = cv2.arcLength(cnt,True)
-            approx = cv2.approxPolyDP(cnt,0.02*perimeter,True)
+            approx = cv2.approxPolyDP(cnt,0.05*perimeter,True)
 
             if area > maxArea and len(approx) == 4:
                 biggestContours = approx #setting biggest area corners as normal
